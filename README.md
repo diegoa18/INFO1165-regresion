@@ -10,3 +10,9 @@
 ```r
 install.packages(c("gclus", "lmtest", "car", "mgcv"))
 ```
+
+#### Organización del trabajo
+* `docs/PLAN.md`: objetivo, rúbrica, hallazgos y tareas.
+* `docs/PROGRESO.md`: estado de cada tarea y próximo paso.
+* `docs/HISTORIAL.md`: bitácora, una entrada por commit.
+* `AGENTS.md`: instrucciones para quien trabaje con IA (Claude, Codex, Cursor, Copilot, etc.).
