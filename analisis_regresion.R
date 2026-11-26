@@ -3,18 +3,12 @@
 ### Réplica metodológica de Tema_IV.R con partición 80/20 (N = 10,000)
 ### =========================================================================
 
-### 0. Dependencias y Generación Reproducible de la Base de Datos
-paquetes <- c("gclus", "lmtest", "car", "mgcv")
-faltantes <- paquetes[!(paquetes %in% installed.packages()[, "Package"])]
-if (length(faltantes) > 0) install.packages(faltantes)
-
+archivo_raw <- "housing_raw.csv"
 archivo_csv <- "Datos_Viviendas_Limpios.csv"
 
 if (!file.exists(archivo_csv)) {
   set.seed(1121)
-  # Fuente Kaggle: California Housing Prices (camnugent/california-housing-prices)
-  url_datos <- "https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.csv"
-  raw_housing <- read.csv(url_datos)
+  raw_housing <- read.csv(archivo_raw)
 
   # Limpieza: eliminar NAs y el tope artificial censal (500,001 USD)
   housing_clean <- na.omit(raw_housing)
@@ -26,10 +20,10 @@ if (!file.exists(archivo_csv)) {
 
   datos_exportar <- data.frame(
     Bloque_ID = paste0("Bloque_", 1:10000),
-    Valor_Vivienda = round(housing_10k$median_house_value / 1000, 2), # Y (miles USD)
-    Edad_Media = housing_10k$housing_median_age,                      # X1
-    Dormitorios_Totales = housing_10k$total_bedrooms,                 # X2
-    Habitaciones_Totales = housing_10k$total_rooms                    # X3
+    Valor_Vivienda = round(housing_10k$median_house_value / 1000, 2),
+    Edad_Media = housing_10k$housing_median_age,
+    Dormitorios_Totales = housing_10k$total_bedrooms,
+    Habitaciones_Totales = housing_10k$total_rooms
   )
 
   write.table(datos_exportar, file = archivo_csv, sep = ";",
