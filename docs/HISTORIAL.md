@@ -12,6 +12,15 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-27 — Evaluación comparable de los modelos de referencia
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T2.2–T2.4
+- **Cambios:**
+  - Se retiran la simulación de optimización y los contrastes F que agrupaban modelos no anidados. La comparación F parcial añade edad al LM de habitaciones.
+  - Se conserva el muestreo original. Se ajusta log1p solo sobre la respuesta y se usa un factor de retransformación calculado con residuos de entrenamiento.
+  - Se unifican RMSE, MAE y R² en prueba, y se informa AIC para los modelos ajustados sobre la misma escala de respuesta.
+- **Métricas:** LM original R² ajustado 0,036, AIC 95.478,9, RMSE 99,25. GAM original R² ajustado 0,128, AIC 94.700,7, RMSE 93,95. LM log1p R² ajustado 0,036 sobre escala log y RMSE 99,34 en prueba. Los RMSE están en miles de USD.
+
 ## 2026-11-27 — Objetivo y alcance de la exposición oral
 - **Autor:** Frante23 (+ Codex)
 - **Tareas:** T1.1, T4.1
