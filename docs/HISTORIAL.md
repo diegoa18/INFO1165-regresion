@@ -12,6 +12,14 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-27 — Objetivo y alcance de la exposición oral
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T1.1, T4.1
+- **Cambios:**
+  - El README identifica qué se predice, la unidad de análisis, la fuente, los filtros y los tamaños de entrenamiento y prueba.
+  - La fase de presentación se organiza como una pauta oral cronometrada. El proyecto mantiene el objetivo de explicar el análisis en 5 a 10 minutos.
+- **Métricas:** sin cambios.
+
 ## 2026-11-25 — Base de trabajo y revisión contra la rúbrica
 - **Autor:** Vicente Matus (+ Claude)
 - **Tareas:** —

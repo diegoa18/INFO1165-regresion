@@ -1,5 +1,10 @@
-# INFO-1165 — Modelos de Regresión Lineal y GAM
-* **Fuente de datos:** Kaggle — *California Housing Prices* (`camnugent/california-housing-prices`), muestra limpia de 10,000 registros (80% entrenamiento / 20% prueba).
+# INFO-1165 · Regresión lineal y modelos aditivos
+
+**¿Qué tan bien podemos predecir el valor mediano de las viviendas de un grupo de bloques censales de California a partir de las características registradas en el censo?**
+
+Usamos [California Housing Prices (Kaggle)](https://www.kaggle.com/datasets/camnugent/california-housing-prices), con 20.640 grupos de bloques del censo de 1990. Quitamos 207 filas con datos faltantes y, de las restantes, 985 con un valor mediano de USD 500.000 o más. De las 19.448 elegibles extraemos 10.000 sin reemplazo y usamos 8.000 para entrenar y 2.000 para evaluar. La semilla `1121` reproduce la muestra y la partición originales.
+
+
 * **Archivos:**
   * `housing_raw.csv`: Dataset original descargado de Kaggle.
   * `Datos_Viviendas_Limpios.csv`: Base procesada lista para el análisis.

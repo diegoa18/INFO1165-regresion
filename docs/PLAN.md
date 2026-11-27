@@ -2,10 +2,10 @@
 
 ## Objetivo
 
-**Predecir el valor mediano de las viviendas de un bloque censal de California (censo 1990) a partir de sus características**, con los modelos de la unidad (regresión lineal y GAM), y presentarlo en 5 a 10 minutos.
+**Predecir el valor mediano de las viviendas de un grupo de bloques censales de California (censo de 1990) a partir de sus características**, con los modelos de la unidad (regresión lineal y GAM), y presentarlo en 5 a 10 minutos.
 
-- **Fuente:** Kaggle — *California Housing Prices* (`camnugent/california-housing-prices`), 20,640 bloques.
-- **Limpieza:** se eliminan NAs y los bloques con el tope censal de 500,001 USD; muestra de 10,000; partición 80/20 entrenamiento/prueba.
+- **Fuente:** Kaggle — *California Housing Prices* (`camnugent/california-housing-prices`), 20.640 grupos de bloques.
+- **Limpieza:** se excluyen filas con faltantes y valores de USD 500.000 o más. Conservamos la muestra original de 10.000 grupos y la partición 80/20 de entrenamiento y prueba.
 - **Entrega:** presentación oral, 3 de diciembre de 2026, 9:30 h. Un integrante elegido al azar presenta y responde preguntas.
 
 ## Rúbrica
@@ -35,8 +35,10 @@ Un 0 en un criterio arrastra a 0 al siguiente (Problema → Modelo → Análisis
 
 | ID | Decisión | Estado |
 |---|---|---|
-| D1 | Agregar `median_income` (y opcionalmente habitaciones por hogar y `ocean_proximity`), o mantener las variables actuales y defender el R² bajo como hallazgo | **Pendiente del grupo** — recomendado: agregar |
-| D2 | Mantener, resumir o eliminar la sección de optimización numérica | Pendiente |
+| D1 | Incorporar ingreso mediano, habitaciones por hogar, edad mediana y zona. Conservar el LM original como referencia. Agrupar los cuatro casos de islas con la categoría cercana al océano. | Planificada |
+| D2 | Retirar la simulación de optimización y dedicar el análisis y la exposición a los datos de vivienda. | Planificada |
+| D3 | Conservar el filtro y la partición originales. Aplicar el log solo a la respuesta y volver a miles de USD con un factor estimado en entrenamiento. | Planificada |
+| D4 | Usar un mapa exploratorio de residuos en prueba. Durbin–Watson requiere un orden con sentido para la autocorrelación de primer orden. | Planificada |
 
 ## Tareas
 
@@ -50,19 +52,19 @@ Cada tarea termina cuando se cumple su criterio de completado. El estado vive en
 ### Fase 2 — Modelo
 
 - **T2.1** Aplicar D1 en `analisis_regresion.R`. *Completado:* el script corre de principio a fin y el historial registra las métricas nuevas.
-- **T2.2** Corregir las comparaciones `anova()` para que solo comparen modelos anidados; el resto se compara con AIC. *Completado:* ningún `anova()` del script devuelve filas con `Df = 0`.
+- **T2.2** Corregir las comparaciones `anova()` para comparar solo modelos lineales anidados. Usar AIC para los demás modelos ajustados sobre la misma escala y observaciones. *Completado:* ningún `anova()` del script devuelve filas con `Df = 0`.
 - **T2.3** Calcular el RMSE de test de todos los modelos en escala original (`expm1()` para los log). *Completado:* una sola tabla final compara todos los modelos en miles de USD.
 - **T2.4** Aplicar D2. *Completado:* la sección queda como se decidió.
 
 ### Fase 3 — Análisis
 
 - **T3.1** Interpretar los coeficientes del modelo lineal final (signo, magnitud, significancia, intervalo de confianza). *Completado:* una frase por coeficiente en `docs/ANALISIS.md`.
-- **T3.2** Interpretar el diagnóstico de residuos (gráficos, Shapiro, Breusch-Pagan, Durbin-Watson). *Completado:* cada test con su H0, resultado y qué implica.
+- **T3.2** Interpretar los gráficos y las pruebas de Shapiro–Wilk y Breusch–Pagan. Explicar cuándo aplica Durbin–Watson y revisar el mapa exploratorio de residuos. *Completado:* cada test aplicable tiene H₀, resultado e implicación y se documenta el alcance del mapa.
 - **T3.3** Interpretar el GAM final (curvas `s()`, edf, comparación por AIC con el LM). *Completado:* se explica qué relación no lineal capta cada término suavizado.
 - **T3.4** Conclusiones: modelo elegido, error esperado, limitaciones. *Completado:* sección de conclusiones en `docs/ANALISIS.md`.
 
 ### Fase 4 — Presentación
 
-- **T4.1** Armar las diapositivas: problema y datos → modelos → resultados y diagnóstico → conclusiones. *Completado:* deck completo con los números del script actual.
+- **T4.1** Preparar la exposición oral con una secuencia de problema, datos, modelos, resultados y conclusiones. *Completado:* pauta escrita con tiempos y cifras verificadas en `docs/PREGUNTAS.md`.
 - **T4.2** Banco de preguntas probables con respuesta (por qué ese R², por qué log, qué es un GAM, qué dicen los residuos, por qué esas variables, qué es AIC). *Completado:* `docs/PREGUNTAS.md` con al menos 10 preguntas respondidas.
 - **T4.3** Ensayo cronometrado: cada integrante presenta una vez. *Completado:* todos dentro de 5 a 10 minutos.
