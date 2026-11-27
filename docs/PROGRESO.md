@@ -6,7 +6,7 @@
 
 ## Próximo paso
 
-Interpretar los coeficientes y los suavizados. Revisar los residuos del LM y la distribución geográfica del error.
+Preparar la pauta oral y el banco de preguntas con los resultados verificados.
 
 ## Estado de tareas
 
@@ -15,17 +15,17 @@ Interpretar los coeficientes y los suavizados. Revisar los residuos del LM y la 
 | D1 | Hecho | Ingreso mediano, habitaciones por hogar, edad mediana y zona. |
 | D2 | Hecho | Se retiró la simulación ajena a los datos de vivienda. |
 | D3 | Hecho | Muestra y partición originales, con predicción logarítmica evaluada en miles de USD. |
-| D4 | Pendiente |  |
+| D4 | Hecho | Diagnóstico espacial exploratorio con un mapa de residuos. |
 | T1.1 | Hecho | Pregunta y fuente en el README. |
 | T1.2 | Hecho | Tabla de variables y unidades en el README. |
 | T2.1 | Hecho | LM y GAM ajustados con los predictores nuevos. |
 | T2.2 | Hecho | Prueba F parcial del LM con ingreso frente al LM completo. |
 | T2.3 | Hecho | Seis modelos evaluados sobre los mismos 2.000 casos y en miles de USD. |
 | T2.4 | Hecho | Script dedicado al análisis de vivienda. |
-| T3.1 | Pendiente |  |
-| T3.2 | Pendiente |  |
-| T3.3 | Pendiente |  |
-| T3.4 | Pendiente |  |
+| T3.1 | Hecho | Coeficientes e intervalos del LM completo en [ANALISIS.md](ANALISIS.md). |
+| T3.2 | Hecho | Pruebas, gráficos, influencia y mapa de residuos explicados. |
+| T3.3 | Hecho | Curvas del GAM, edf y comparación de AIC documentados. |
+| T3.4 | Hecho | Modelo elegido, error observado y alcance documentados. |
 | T4.1 | Pendiente |  |
 | T4.2 | Pendiente |  |
 | T4.3 | Pendiente | Ensayo individual de todos los integrantes. |

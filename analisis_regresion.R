@@ -117,6 +117,100 @@ cat("\nComparación en prueba (RMSE y MAE en miles de USD)\n")
 print(resultados, digits = 6, row.names = FALSE, na.print = "—")
 cat("\nFactor de retransformación log1p:", factor_retransformacion, "\n")
 
+# 4. Diagnóstico del LM completo y visualización del GAM
+residuos_lineal <- residuals(lineal)
+set.seed(1121)
+cat("\nShapiro-Wilk (submuestra de 5.000 residuos del LM completo)\n")
+print(shapiro.test(sample(residuos_lineal, min(5000, length(residuos_lineal)))))
+cat("\nBreusch-Pagan (versión studentizada, LM completo)\n")
+print(lmtest::bptest(lineal))
+
+# Los casos influyentes se identifican para revisar su efecto, sin borrarlos.
+cook <- cooks.distance(lineal)
+mas_influyentes <- head(order(cook, decreasing = TRUE), 3)
+cat("\nBloques con mayor distancia de Cook en el LM completo\n")
+print(data.frame(
+  Bloque = entrenamiento$Bloque_ID[mas_influyentes],
+  Habitaciones_por_Hogar = entrenamiento$Habitaciones_por_Hogar[mas_influyentes],
+  Apalancamiento = unname(hatvalues(lineal)[mas_influyentes]),
+  Distancia_Cook = unname(cook[mas_influyentes])
+), row.names = FALSE, digits = 4)
+
 carpeta_resultados <- "resultados"
 dir.create(carpeta_resultados, showWarnings = FALSE)
 write.csv(resultados, file.path(carpeta_resultados, "metricas.csv"), row.names = FALSE)
+
+png(file.path(carpeta_resultados, "diagnostico_lm.png"),
+    width = 1200, height = 950, res = 140)
+par(mfrow = c(2, 2), mar = c(4.2, 4.2, 3, 1), mgp = c(2.4, 0.8, 0))
+plot(lineal, which = c(1, 2, 3, 5), id.n = 0, pch = 16,
+     col = adjustcolor("#27516B", 0.25),
+     caption = c("Residuos vs. ajustados", "QQ normal", "Escala-localización",
+                 "Distancia de Cook", "Residuos vs. leverage", "Cook vs. leverage"))
+invisible(dev.off())
+
+# Se muestra el rango entre los percentiles 1 y 99 de cada predictor para que los extremos no oculten la curva.
+# El ajuste usa todas las observaciones del entrenamiento.
+variables_suaves <- c("Ingreso_Mediano", "Habitaciones_por_Hogar", "Edad_Media")
+etiquetas <- c("Ingreso (decenas de miles de USD)", "Habitaciones por hogar",
+               "Edad mediana (años)")
+perfil <- entrenamiento[1, ]
+for (variable in variables_suaves) {
+  perfil[[variable]] <- median(entrenamiento[[variable]])
+}
+perfil$Zona <- factor("INLAND", levels = levels(entrenamiento$Zona))
+
+png(file.path(carpeta_resultados, "curvas_gam.png"),
+    width = 1530, height = 540, res = 135)
+par(mfrow = c(1, 3), mar = c(4.5, 4.3, 2.4, 0.8), mgp = c(2.4, 0.75, 0))
+for (i in seq_along(variables_suaves)) {
+  variable <- variables_suaves[i]
+  termino <- paste0("s(", variable, ")")
+  limites <- quantile(entrenamiento[[variable]], c(0.01, 0.99))
+  rejilla <- seq(limites[1], limites[2], length.out = 200)
+  perfiles <- perfil[rep(1, length(rejilla)), ]
+  perfiles[[variable]] <- rejilla
+
+  efecto <- predict(aditivo, newdata = perfiles, type = "terms",
+                    terms = termino, se.fit = TRUE)
+  ajuste <- efecto$fit[, 1]
+  margen <- qnorm(0.975) * efecto$se.fit[, 1]
+
+  plot(rejilla, ajuste, type = "n", ylim = range(ajuste - margen, ajuste + margen, 0),
+       xlab = etiquetas[i], ylab = "Efecto parcial (miles de USD)")
+  polygon(c(rejilla, rev(rejilla)), c(ajuste - margen, rev(ajuste + margen)),
+          col = "#D7E8ED", border = NA)
+  abline(h = 0, col = "gray45", lty = 2)
+  lines(rejilla, ajuste, lwd = 2.5, col = "#27516B")
+
+  # Contrastes para interpretar la forma de cada curva con números reproducibles.
+  cuantiles <- quantile(entrenamiento[[variable]], c(0.10, 0.25, 0.50, 0.75, 0.90))
+  perfiles_cuantiles <- perfil[rep(1, length(cuantiles)), ]
+  perfiles_cuantiles[[variable]] <- cuantiles
+  efectos_cuantiles <- predict(aditivo, newdata = perfiles_cuantiles, type = "terms",
+                               terms = termino)[, 1]
+  cat("\nEfecto parcial de", variable, "por percentil de entrenamiento\n")
+  print(round(cbind(Predictor = cuantiles, Efecto = efectos_cuantiles), 2))
+}
+invisible(dev.off())
+
+# El orden aleatorio de los bloques no define rezagos para Durbin-Watson.
+# El mapa permite examinar agrupaciones de los errores del GAM en prueba.
+residuos_gam_prueba <- observado - predicciones$GAM
+cortes <- cut(residuos_gam_prueba, breaks = c(-Inf, -50, 50, Inf),
+              labels = c("Sobreestima > 50", "Entre −50 y 50", "Subestima > 50"))
+colores_mapa <- c("#24588E", "#9AA9AA", "#AE4230")
+png(file.path(carpeta_resultados, "residuos_gam_mapa.png"),
+    width = 1100, height = 950, res = 135)
+par(mar = c(4.3, 4.3, 3, 1), mgp = c(2.4, 0.8, 0))
+plot(prueba$Longitud, prueba$Latitud, type = "n", xlab = "Longitud", ylab = "Latitud",
+     asp = 1 / cos(mean(prueba$Latitud) * pi / 180),
+     main = "Residuos del GAM en prueba")
+for (grupo in c(2, 1, 3)) {
+  indices <- cortes == levels(cortes)[grupo]
+  points(prueba$Longitud[indices], prueba$Latitud[indices], pch = 16, cex = 0.65,
+         col = adjustcolor(colores_mapa[grupo], alpha.f = 0.7))
+}
+legend("topright", legend = levels(cortes), col = colores_mapa, pch = 16,
+       title = "Observado − predicho (miles de USD)", bty = "n")
+invisible(dev.off())

@@ -12,6 +12,15 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-27 — Diagnóstico y lectura de resultados
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T3.1–T3.4
+- **Cambios:**
+  - Se añaden Shapiro–Wilk, Breusch–Pagan, distancia de Cook y gráficos de residuos al LM completo. Se documenta la cautela al interpretar sus intervalos clásicos.
+  - Se grafican los efectos parciales del GAM y se añaden los contrastes por percentil y un mapa exploratorio de errores de prueba. El orden aleatorio del muestreo no define rezagos interpretables para Durbin–Watson.
+  - Se interpretan los coeficientes, AIC, suavizados y alcance de la evaluación en ANALISIS.md.
+- **Métricas:** sin cambios en R², AIC ni RMSE. Shapiro–Wilk W = 0,9327 y Breusch–Pagan BP = 270,76, ambos con p < 0,001.
+
 ## 2026-11-27 — Predictores censales y modelos ajustados
 - **Autor:** Frante23 (+ Codex)
 - **Tareas:** T1.2, T2.1
