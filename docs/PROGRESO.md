@@ -6,7 +6,7 @@
 
 ## Próximo paso
 
-Preparar la pauta oral y el banco de preguntas con los resultados verificados.
+Cada integrante debe ensayar la exposición completa y practicar el banco de preguntas. La pauta cubre 7 min 10 s y el ensayo debe durar entre 5 y 10 min por persona.
 
 ## Estado de tareas
 
@@ -26,8 +26,8 @@ Preparar la pauta oral y el banco de preguntas con los resultados verificados.
 | T3.2 | Hecho | Pruebas, gráficos, influencia y mapa de residuos explicados. |
 | T3.3 | Hecho | Curvas del GAM, edf y comparación de AIC documentados. |
 | T3.4 | Hecho | Modelo elegido, error observado y alcance documentados. |
-| T4.1 | Pendiente |  |
-| T4.2 | Pendiente |  |
+| T4.1 | Hecho | Pauta de exposición oral de 7 min 10 s, organizada por tema. |
+| T4.2 | Hecho | Quince preguntas respondidas y pauta cronometrada en [PREGUNTAS.md](PREGUNTAS.md). |
 | T4.3 | Pendiente | Ensayo individual de todos los integrantes. |
 
 ## Métricas de referencia

@@ -12,6 +12,14 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-27 — Pauta oral y preparación de preguntas
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T4.1–T4.2
+- **Cambios:**
+  - Se documentan quince preguntas con respuestas sobre la fuente, las variables, los modelos, la evaluación y las limitaciones.
+  - Se ordena la exposición en siete bloques temáticos con un total previsto de 7 min 10 s. El ensayo individual queda pendiente.
+- **Métricas:** sin cambios.
+
 ## 2026-11-27 — Diagnóstico y lectura de resultados
 - **Autor:** Frante23 (+ Codex)
 - **Tareas:** T3.1–T3.4
