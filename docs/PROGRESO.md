@@ -6,21 +6,21 @@
 
 ## Próximo paso
 
-Ajustar los modelos con ingreso, habitaciones por hogar, edad y zona. Mantener el LM de referencia.
+Interpretar los coeficientes y los suavizados. Revisar los residuos del LM y la distribución geográfica del error.
 
 ## Estado de tareas
 
 | ID | Estado | Resultado |
 |---|---|---|
-| D1 | Pendiente |  |
+| D1 | Hecho | Ingreso mediano, habitaciones por hogar, edad mediana y zona. |
 | D2 | Hecho | Se retiró la simulación ajena a los datos de vivienda. |
 | D3 | Hecho | Muestra y partición originales, con predicción logarítmica evaluada en miles de USD. |
 | D4 | Pendiente |  |
 | T1.1 | Hecho | Pregunta y fuente en el README. |
-| T1.2 | Pendiente |  |
-| T2.1 | Pendiente |  |
-| T2.2 | Hecho | Prueba F entre los LM anidados de habitaciones y de edad más habitaciones. |
-| T2.3 | Hecho | Cinco modelos de referencia comparados en las mismas observaciones y unidades. |
+| T1.2 | Hecho | Tabla de variables y unidades en el README. |
+| T2.1 | Hecho | LM y GAM ajustados con los predictores nuevos. |
+| T2.2 | Hecho | Prueba F parcial del LM con ingreso frente al LM completo. |
+| T2.3 | Hecho | Seis modelos evaluados sobre los mismos 2.000 casos y en miles de USD. |
 | T2.4 | Hecho | Script dedicado al análisis de vivienda. |
 | T3.1 | Pendiente |  |
 | T3.2 | Pendiente |  |
@@ -35,7 +35,6 @@ Ajustar los modelos con ingreso, habitaciones por hogar, edad y zona. Mantener e
 | Modelo | R² ajustado de entrenamiento | AIC en escala original | RMSE de prueba (miles de USD) |
 |---|---:|---:|---:|
 | Promedio de entrenamiento | 0,000 | 95.773,0 | 100,44 |
-| LM con habitaciones | 0,019 | 95.618,6 | 99,66 |
 | LM original | 0,036 | 95.478,9 | 99,25 |
-| LM log1p | 0,036 en escala log | — | 99,34 |
-| GAM original | 0,128 | 94.700,7 | 93,95 |
+| LM completo | 0,558 | 89.253,1 | 68,27 |
+| GAM | 0,584 | 88.780,9 | 66,31 |

@@ -12,6 +12,15 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-27 — Predictores censales y modelos ajustados
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T1.2, T2.1
+- **Cambios:**
+  - Se amplía el CSV con ingreso, habitaciones por hogar, zona y coordenadas. Se conservan las primeras cinco columnas, los 10.000 casos originales y la partición con semilla 1121.
+  - Se agrupan las cuatro observaciones de islas con NEAR OCEAN y se usa INLAND como referencia. El LM original se mantiene como referencia histórica.
+  - Se ajustan el LM de ingreso, el LM completo, su alternativa logarítmica y un GAM con tres suavizados estimados por REML.
+- **Métricas:** LM con ingreso R² ajustado 0,406, AIC 91.601,2, RMSE 77,66. LM completo R² ajustado 0,558, AIC 89.253,1, RMSE 68,27. LM log1p R² ajustado 0,604 en log y RMSE 74,03. GAM R² ajustado 0,584, AIC 88.780,9, RMSE 66,31. Los RMSE están en miles de USD de prueba.
+
 ## 2026-11-27 — Evaluación comparable de los modelos de referencia
 - **Autor:** Frante23 (+ Codex)
 - **Tareas:** T2.2–T2.4

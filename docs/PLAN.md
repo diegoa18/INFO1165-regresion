@@ -35,7 +35,7 @@ Un 0 en un criterio arrastra a 0 al siguiente (Problema → Modelo → Análisis
 
 | ID | Decisión | Estado |
 |---|---|---|
-| D1 | Incorporar ingreso mediano, habitaciones por hogar, edad mediana y zona. Conservar el LM original como referencia. Agrupar los cuatro casos de islas con la categoría cercana al océano. | Planificada |
+| D1 | Incorporar ingreso mediano, habitaciones por hogar, edad mediana y zona. Conservar el LM original como referencia. Agrupar los cuatro casos de islas con la categoría cercana al océano. | Aplicada el 2026-11-27 |
 | D2 | Retirar la simulación de optimización y dedicar el análisis y la exposición a los datos de vivienda. | Aplicada el 2026-11-27 |
 | D3 | Conservar el filtro y la partición originales. Aplicar el log solo a la respuesta y volver a miles de USD con un factor estimado en entrenamiento. | Aplicada el 2026-11-27 |
 | D4 | Usar un mapa exploratorio de residuos en prueba. Durbin–Watson requiere un orden con sentido para la autocorrelación de primer orden. | Planificada |
