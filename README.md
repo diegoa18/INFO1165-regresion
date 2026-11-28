@@ -32,7 +32,7 @@ Desde una terminal en la raíz del repositorio con Rscript disponible:
 Rscript analisis_regresion.R
 ```
 
-El script lee `housing_raw.csv`, regenera `Datos_Viviendas_Limpios.csv` con separador `;` y ajusta los modelos. Imprime los coeficientes, las pruebas y las métricas. Guarda `metricas.csv` y tres gráficos en `resultados/`.
+El script lee `housing_raw.csv`, regenera `Datos_Viviendas_Limpios.csv` con separador `;` y ajusta los modelos. Imprime los coeficientes, las pruebas y las métricas. Guarda `metricas.csv`, `metricas_gam_por_zona.csv` y tres gráficos en `resultados/`.
 
 ## Resultado
 

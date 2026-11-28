@@ -197,6 +197,17 @@ invisible(dev.off())
 # El orden aleatorio de los bloques no define rezagos para Durbin-Watson.
 # El mapa permite examinar agrupaciones de los errores del GAM en prueba.
 residuos_gam_prueba <- observado - predicciones$GAM
+residuos_por_zona <- split(residuos_gam_prueba, prueba$Zona)
+gam_por_zona <- data.frame(
+  Zona = names(residuos_por_zona),
+  N_Prueba = unname(lengths(residuos_por_zona)),
+  RMSE_Prueba = vapply(residuos_por_zona, function(r) sqrt(mean(r^2)), numeric(1))
+)
+cat("\nRMSE del GAM por zona (miles de USD)\n")
+print(gam_por_zona, row.names = FALSE, digits = 5)
+write.csv(gam_por_zona, file.path(carpeta_resultados, "metricas_gam_por_zona.csv"),
+          row.names = FALSE)
+
 cortes <- cut(residuos_gam_prueba, breaks = c(-Inf, -50, 50, Inf),
               labels = c("Sobreestima > 50", "Entre −50 y 50", "Subestima > 50"))
 colores_mapa <- c("#24588E", "#9AA9AA", "#AE4230")

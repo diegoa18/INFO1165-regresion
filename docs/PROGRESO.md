@@ -1,12 +1,12 @@
 # Progreso
 
-**Última actualización** 2026-11-27
+**Última actualización** 2026-11-28
 
-**Presentación** 3 de diciembre de 2026, 9:30 h (faltan 6 días)
+**Presentación** 3 de diciembre de 2026, 9:30 h (faltan 5 días)
 
 ## Próximo paso
 
-Cada integrante debe ensayar la exposición completa y practicar el banco de preguntas. La pauta cubre 7 min 10 s y el ensayo debe durar entre 5 y 10 min por persona.
+Completar las diapositivas y la auditoría de la exposición con los resultados de la nueva corrida.
 
 ## Estado de tareas
 
@@ -25,7 +25,7 @@ Cada integrante debe ensayar la exposición completa y practicar el banco de pre
 | T3.1 | Hecho | Coeficientes e intervalos del LM completo en [ANALISIS.md](ANALISIS.md). |
 | T3.2 | Hecho | Pruebas, gráficos, influencia y mapa de residuos explicados. |
 | T3.3 | Hecho | Curvas del GAM, edf y comparación de AIC documentados. |
-| T3.4 | Hecho | Modelo elegido, error observado y alcance documentados. |
+| T3.4 | Hecho | Modelo elegido, error global y por zona, y alcance documentados. |
 | T4.1 | Hecho | Pauta de exposición oral de 7 min 10 s, organizada por tema. |
 | T4.2 | Hecho | Quince preguntas respondidas y pauta cronometrada en [PREGUNTAS.md](PREGUNTAS.md). |
 | T4.3 | Pendiente | Ensayo individual de todos los integrantes. |

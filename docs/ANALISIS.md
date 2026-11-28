@@ -57,6 +57,19 @@ El GAM gaussiano con enlace identidad suma tres efectos suavizados y un desplaza
 
 Los tres contrastes de suavizados dan p < 2,2 × 10⁻¹⁶ en la salida de R, bajo la aproximación de `mgcv`. El chequeo de dimensión de base dio índices `k` próximos a 1 (1,018, 1,022 y 0,995, respectivamente) y en esta corrida no mostró señales claras de bases insuficientes.
 
+## Error del GAM por zona
+
+El desglose de los mismos 2.000 casos se reproduce en `resultados/metricas_gam_por_zona.csv`.
+
+| Zona | Grupos en prueba | RMSE (miles de USD) |
+|---|---:|---:|
+| `INLAND` | 656 | 50,72 |
+| `<1H OCEAN` | 872 | 70,06 |
+| `NEAR BAY` | 224 | 78,81 |
+| `NEAR OCEAN` | 248 | 76,11 |
+
+En esta partición, el grupo interior obtuvo el menor RMSE y los sectores cercanos a una bahía, el mayor. Las categorías tienen tamaños distintos. El desglose describe el error dentro de la muestra y debe leerse con el mapa exploratorio.
+
 ## Conclusiones
 
 El GAM obtuvo el menor error de los modelos evaluados. En prueba, su RMSE fue de unos **USD 66.314** y su MAE de **USD 48.515** para el valor mediano de un grupo de bloques. La mayor reducción del error se observa al incorporar el ingreso y enriquecer los predictores. El GAM aporta una mejora adicional de aproximadamente **USD 1.955 de RMSE** frente al LM completo y permite explicar relaciones que cambian de pendiente.

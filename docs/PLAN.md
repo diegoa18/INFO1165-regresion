@@ -61,7 +61,7 @@ Cada tarea termina cuando se cumple su criterio de completado. El estado vive en
 - **T3.1** Interpretar los coeficientes del modelo lineal final (signo, magnitud, significancia, intervalo de confianza). *Completado:* una frase por coeficiente en `docs/ANALISIS.md`.
 - **T3.2** Interpretar los gráficos y las pruebas de Shapiro–Wilk y Breusch–Pagan. Explicar cuándo aplica Durbin–Watson y revisar el mapa exploratorio de residuos. *Completado:* cada test aplicable tiene H₀, resultado e implicación y se documenta el alcance del mapa.
 - **T3.3** Interpretar el GAM final (curvas `s()`, edf, comparación por AIC con el LM). *Completado:* se explica qué relación no lineal capta cada término suavizado.
-- **T3.4** Conclusiones: modelo elegido, error esperado, limitaciones. *Completado:* sección de conclusiones en `docs/ANALISIS.md`.
+- **T3.4** Conclusiones: modelo elegido, error observado y limitaciones. *Completado:* conclusiones y desglose del error por zona en `docs/ANALISIS.md`.
 
 ### Fase 4 — Presentación
 

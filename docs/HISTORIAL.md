@@ -12,6 +12,14 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-28 — Error de predicción por zona
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T3.4
+- **Cambios:**
+  - Se desglosa el RMSE del GAM por proximidad al océano en los mismos 2.000 casos de prueba. El script imprime y guarda la tabla con el tamaño de cada grupo.
+  - Se documenta cómo interpretar el desglose bajo una partición aleatoria y se conserva el algoritmo de ajuste y predicción.
+- **Métricas:** R², AIC y RMSE globales sin cambios. RMSE por zona entre 50,72 mil USD (interior) y 78,81 mil USD (cerca de la bahía).
+
 ## 2026-11-27 — Pauta oral y preparación de preguntas
 - **Autor:** Frante23 (+ Codex)
 - **Tareas:** T4.1–T4.2
