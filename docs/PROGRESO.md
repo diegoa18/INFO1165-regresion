@@ -6,7 +6,7 @@
 
 ## Próximo paso
 
-Cerrar la auditoría técnica de la versión con diapositivas. Después, cada integrante ensayará la secuencia principal.
+Cada integrante debe ensayar las siete láminas principales, registrar su tiempo y practicar las preguntas. La pauta prevé 7 min 10 s dentro de la ventana de 5 a 10 min.
 
 ## Estado de tareas
 
@@ -29,7 +29,7 @@ Cerrar la auditoría técnica de la versión con diapositivas. Después, cada in
 | T4.1 | Hecho | Diez láminas en el PowerPoint, siete para exponer y tres de respaldo. [Guion](PRESENTACION.md) de 7 min 10 s. |
 | T4.2 | Hecho | Dieciocho preguntas y pauta cronometrada en [PREGUNTAS.md](PREGUNTAS.md). |
 | T4.3 | Pendiente | Ensayo individual de todos los integrantes. |
-| T4.4 | En curso | Auditoría contra la rúbrica y comprobación de los artefactos. |
+| T4.4 | Hecho | Rúbrica, controles de datos, métricas y PowerPoint verificados en [AUDITORIA.md](AUDITORIA.md). |
 
 ## Métricas de referencia
 

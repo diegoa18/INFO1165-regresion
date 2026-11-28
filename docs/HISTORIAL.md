@@ -12,6 +12,15 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-28 — Auditoría de la rúbrica y reproducibilidad
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T4.4
+- **Cambios:**
+  - Se cotejan los seis criterios registrados en el plan con evidencias del código, el análisis, el PowerPoint y el banco de defensa.
+  - Se repite la ejecución desde el CSV original, se recalculan las métricas y se verifica el archivo de PowerPoint con sus notas y gráficos editables.
+  - Se documentan el alcance de la fuente disponible, las predicciones por sobre el umbral de limpieza y los criterios que dependen del ensayo de cada integrante.
+- **Métricas:** sin cambios. GAM con RMSE 66,31 mil USD, MAE 48,51 mil USD y R² de prueba 0,564.
+
 ## 2026-11-28 — PowerPoint y guion de defensa
 - **Autor:** Frante23 (+ Codex)
 - **Tareas:** T4.1–T4.2
