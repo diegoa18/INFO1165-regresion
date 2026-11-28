@@ -12,6 +12,14 @@ Bitácora del proyecto, la entrada más reciente arriba. Cada commit agrega una 
 
 ---
 
+## 2026-11-28 — PowerPoint y guion de defensa
+- **Autor:** Frante23 (+ Codex)
+- **Tareas:** T4.1–T4.2
+- **Cambios:**
+  - Se retoma la tarea de diapositivas del plan original. Siete láminas con notas cubren la exposición y tres láminas de respaldo ayudan a explicar coeficientes, contrastes y errores por zona.
+  - Se añaden curvas del GAM y dos gráficos de diagnóstico editables. El guion se conserva en el repositorio y el banco se amplía a dieciocho preguntas.
+- **Métricas:** sin cambios.
+
 ## 2026-11-28 — Error de predicción por zona
 - **Autor:** Frante23 (+ Codex)
 - **Tareas:** T3.4

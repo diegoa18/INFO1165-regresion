@@ -39,5 +39,6 @@ El script lee `housing_raw.csv`, regenera `Datos_Viviendas_Limpios.csv` con sepa
 El GAM obtuvo **66,31 mil USD de RMSE**, **48,51 mil USD de MAE** y **0,564 de R²** en los 2.000 casos de prueba. El LM completo obtuvo 68,27 mil USD de RMSE. La evaluación corresponde a una partición aleatoria de datos censales de 1990 bajo el umbral de valor indicado.
 
 - [Interpretación de los resultados y diagnóstico](docs/ANALISIS.md)
+- [PowerPoint](docs/INFO1165-California.pptx) y [guion de exposición](docs/PRESENTACION.md)
 - [Preguntas y pauta para el ensayo](docs/PREGUNTAS.md)
 - [Plan](docs/PLAN.md), [progreso](docs/PROGRESO.md) e [historial](docs/HISTORIAL.md)

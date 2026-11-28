@@ -60,9 +60,21 @@ El contraste requiere un orden en el que tenga sentido hablar de observaciones c
 
 El GAM dio 66,31 mil USD de RMSE, frente a 68,27 del LM completo y 100,44 del promedio. El mayor cambio vino de mejorar las variables. La ventaja del GAM sobre el LM es pequeña y se observó en una sola partición aleatoria del censo de 1990. El resultado se limita a sectores con valores bajo el umbral y no permite estimar el error en zonas geográficas completamente nuevas.
 
+## 16. ¿El GAM predice igual de bien en todas las zonas?
+
+En esta prueba, el RMSE fue 50,72 mil USD en el interior y 78,81 mil USD cerca de la bahía. Las zonas tienen distinto tamaño y comparten regiones con el entrenamiento. Es un desglose descriptivo de esta partición.
+
+## 17. ¿Por qué el resultado de una partición aleatoria no mide el error en una región nueva?
+
+Dos grupos cercanos se pueden parecer y quedar en conjuntos distintos. Para responder cómo funcionaría en una región nueva, habría que separar regiones completas antes del ajuste. La comparación actual mide errores en otros grupos dentro de la distribución de la muestra.
+
+## 18. ¿Qué hacen los modelos con predicciones sobre el umbral de limpieza?
+
+El umbral se aplica al valor observado para definir la muestra. Los modelos no fuerzan ese límite en sus predicciones. En prueba, la variante log entregó 13 estimaciones de al menos USD 500.000 y el GAM no entregó ninguna. Evaluamos las predicciones tal como salieron de cada ajuste.
+
 ## Pauta de exposición oral
 
-| Bloque | Punto a defender | Tiempo |
+| Lámina | Punto a defender | Tiempo |
 |---|---|---:|
 | 1 | Pregunta predictiva y unidad de análisis | 0:30 |
 | 2 | Datos, exclusiones y partición | 1:00 |
@@ -73,4 +85,4 @@ El GAM dio 66,31 mil USD de RMSE, frente a 68,27 del LM completo y 100,44 del pr
 | 7 | Modelo elegido y alcance | 0:50 |
 | | **Total previsto** | **7:10** |
 
-Cada integrante puede seguir los siete bloques en orden y practicar preguntas al azar. El tiempo de la tabla es una meta para el ensayo.
+El [guion por lámina](PRESENTACION.md) acompaña las siete diapositivas principales. Las tres láminas de respaldo se pueden usar para responder preguntas. Cada integrante debe registrar su tiempo real durante el ensayo.

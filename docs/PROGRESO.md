@@ -6,7 +6,7 @@
 
 ## Próximo paso
 
-Completar las diapositivas y la auditoría de la exposición con los resultados de la nueva corrida.
+Cerrar la auditoría técnica de la versión con diapositivas. Después, cada integrante ensayará la secuencia principal.
 
 ## Estado de tareas
 
@@ -26,9 +26,10 @@ Completar las diapositivas y la auditoría de la exposición con los resultados 
 | T3.2 | Hecho | Pruebas, gráficos, influencia y mapa de residuos explicados. |
 | T3.3 | Hecho | Curvas del GAM, edf y comparación de AIC documentados. |
 | T3.4 | Hecho | Modelo elegido, error global y por zona, y alcance documentados. |
-| T4.1 | Hecho | Pauta de exposición oral de 7 min 10 s, organizada por tema. |
-| T4.2 | Hecho | Quince preguntas respondidas y pauta cronometrada en [PREGUNTAS.md](PREGUNTAS.md). |
+| T4.1 | Hecho | Diez láminas en el PowerPoint, siete para exponer y tres de respaldo. [Guion](PRESENTACION.md) de 7 min 10 s. |
+| T4.2 | Hecho | Dieciocho preguntas y pauta cronometrada en [PREGUNTAS.md](PREGUNTAS.md). |
 | T4.3 | Pendiente | Ensayo individual de todos los integrantes. |
+| T4.4 | En curso | Auditoría contra la rúbrica y comprobación de los artefactos. |
 
 ## Métricas de referencia
 

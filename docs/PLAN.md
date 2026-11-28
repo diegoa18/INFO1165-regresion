@@ -65,6 +65,7 @@ Cada tarea termina cuando se cumple su criterio de completado. El estado vive en
 
 ### Fase 4 — Presentación
 
-- **T4.1** Preparar la exposición oral con una secuencia de problema, datos, modelos, resultados y conclusiones. *Completado:* pauta escrita con tiempos y cifras verificadas en `docs/PREGUNTAS.md`.
+- **T4.1** Preparar las diapositivas y el guion para una exposición oral de 5 a 10 minutos. *Completado:* un PowerPoint con datos, modelos, resultados, diagnósticos y conclusión. Las láminas de respaldo sirven para la ronda de preguntas.
 - **T4.2** Banco de preguntas probables con respuesta (por qué ese R², por qué log, qué es un GAM, qué dicen los residuos, por qué esas variables, qué es AIC). *Completado:* `docs/PREGUNTAS.md` con al menos 10 preguntas respondidas.
 - **T4.3** Ensayo cronometrado: cada integrante presenta una vez. *Completado:* todos dentro de 5 a 10 minutos.
+- **T4.4** Auditar las evidencias de cada criterio de la rúbrica y comprobar la reproducibilidad. *Completado:* matriz y pruebas registradas en `docs/AUDITORIA.md`.
